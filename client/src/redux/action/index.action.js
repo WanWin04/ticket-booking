@@ -7,5 +7,5 @@ export const getType = (reduxAction) => {
 export const getPosts = createActions({
   getPostsRequest: undefined,
   getPostsSuccess: (payload) => payload,
-  getPostsFailure: (err) => err,
+  getPostsFailure: (error) => error,
 });

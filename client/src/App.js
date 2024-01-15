@@ -1,12 +1,7 @@
-import { useDispatch } from "react-redux";
-import * as actions from "./redux/action";
+import HomePage from "./pages/HomePage.js";
 
 function App() {
-  const dispatch = useDispatch();
-
-  dispatch(actions.getPosts.getPostsRequest());
-
-  return <p>App</p>;
+  return <HomePage />;
 }
 
 export default App;

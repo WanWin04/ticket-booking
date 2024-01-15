@@ -1,5 +1,5 @@
 import { INIT_STATE } from "../../constant";
-import { getPosts, getType } from "../action";
+import { getPosts, getType } from "../action/index.action.js";
 
 export default function postReducers(state = INIT_STATE.posts, action) {
   switch (action.type) {
