@@ -9,8 +9,8 @@ import {
   IconButton,
   Typography,
 } from "@material-ui/core";
-import { MoreVertIcon } from "@material-ui/icons/MoreVert";
-import { FavoriteIcon } from "@material-ui/icons/Favorite";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 export default function Post() {
   return (
