@@ -11,34 +11,35 @@ import {
 } from "@material-ui/core";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import moment from "moment";
 
-export default function Post() {
+export default function Post({ post }) {
   return (
     <Card>
       <CardHeader
         avatar={<Avatar>A</Avatar>}
-        title="This is title"
-        subheader="2024"
+        title={post.author}
+        subheader={moment(post.updatedAt).format("HH:MM MMM DD, YYYY")}
         action={
           <IconButton>
             <MoreVertIcon />
           </IconButton>
         }
       />
-      <CardMedia image="" title="Title" />
+      <CardMedia image={post.attachment} title="Title" />
       <CardContent>
         <Typography variant="h5" color="textPrimary">
-          This is Title Post
+          {post.title}
         </Typography>
         <Typography variant="body2" component="p" color="textSecondary">
-          This is Content Post
+          {post.content}
         </Typography>
       </CardContent>
       <CardActions>
         <IconButton>
           <FavoriteIcon />
           <Typography component="span" color="textSecondary">
-            100 likes
+            {post.likeCount}
           </Typography>
         </IconButton>
       </CardActions>
