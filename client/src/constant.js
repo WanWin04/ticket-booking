@@ -3,4 +3,7 @@ export const INIT_STATE = {
     isLoading: false,
     data: [],
   },
+  modal: {
+    isHow: false,
+  },
 };
