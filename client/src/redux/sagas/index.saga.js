@@ -15,7 +15,7 @@ function* fetchPostSaga(action) {
 
 function* createPostSaga(action) {
   try {
-    const post = yield call(api.createPost);
+    const post = yield call(api.createPosts, action.payload);
     console.log(`createPostSaga - [post]`, post);
     yield put(actions.createPost.createPostSuccess(post.data));
   } catch (err) {
