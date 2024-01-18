@@ -15,12 +15,12 @@ function* fetchPostSaga(action) {
 
 function* createPostSaga(action) {
   try {
-    const post = yield call(api.createPosts);
+    const post = yield call(api.createPost);
     console.log(`createPostSaga - [post]`, post);
     yield put(actions.createPost.createPostSuccess(post.data));
   } catch (err) {
     console.error(err);
-    yield put(actions.createPosts.createPostFailure(err));
+    yield put(actions.createPost.createPostFailure(err));
   }
 }
 

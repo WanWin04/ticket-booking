@@ -4,7 +4,7 @@ import FileBase64 from "react-file-base64";
 import { useSelector, useDispatch } from "react-redux";
 import { modalState$ } from "../../redux/selectors/index.selectors";
 import useStyles from "./styles.PostModal";
-import { hideModal } from "../../redux/action/index.action";
+import { createPost, hideModal } from "../../redux/action/index.action";
 
 export default function PostModel() {
   const [data, setData] = React.useState({
@@ -23,7 +23,8 @@ export default function PostModel() {
 
   const onSubmit = React.useCallback(() => {
     console.log({ data });
-  }, [data]);
+    dispatch(createPost.createPostRequest(data));
+  }, [data, dispatch]);
 
   const body = (
     <div className={classes.paper} id="simple-modal-title">
