@@ -24,9 +24,21 @@ function* createPostSaga(action) {
   }
 }
 
+function* updatePostSaga(action) {
+  try {
+    const updatePost = yield call(api.updatePosts, action.payload);
+    console.log(`updatePostSaga - [post]`, updatePost);
+    yield put(actions.updatePost.updatePostSuccess(updatePost.data));
+  } catch (err) {
+    console.error(err);
+    yield put(actions.updatePost.updatePostFailure(err));
+  }
+}
+
 function* mySaga() {
   yield takeLatest(actions.getPosts.getPostsRequest, fetchPostSaga);
   yield takeLatest(actions.createPost.createPostRequest, createPostSaga);
+  yield takeLatest(actions.updatePost.updatePostRequest, updatePostSaga);
 }
 
 export default mySaga;

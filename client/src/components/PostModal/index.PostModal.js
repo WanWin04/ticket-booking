@@ -19,6 +19,11 @@ export default function PostModel() {
 
   const onClose = React.useCallback(() => {
     dispatch(hideModal());
+    setData({
+      title: "",
+      content: "",
+      attachment: "",
+    });
   }, [dispatch]);
 
   const onSubmit = React.useCallback(() => {

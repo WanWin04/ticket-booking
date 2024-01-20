@@ -16,5 +16,11 @@ export const createPost = createActions({
   createPostFailure: (error) => error,
 });
 
+export const updatePost = createActions({
+  updatePostRequest: (padload) => padload,
+  updatePostSuccess: (payload) => payload,
+  updatePostFailure: (error) => error,
+});
+
 export const showModal = createAction("SHOW_CREATE_POST_MODAL");
 export const hideModal = createAction("HIDE_CREATE_POST_MODAL");
