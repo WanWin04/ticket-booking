@@ -1,5 +1,5 @@
 import { INIT_STATE } from "../../constant";
-import { getType, showModal, hideModal } from "../action/index.action.js ";
+import { getType, showModal, hideModal } from "../action/index.action.js";
 
 export default function modalReducers(state = INIT_STATE.modal, action) {
   switch (action.type) {

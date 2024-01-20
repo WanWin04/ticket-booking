@@ -2,9 +2,9 @@ import React from "react";
 import { Button, Modal, TextField, TextareaAutosize } from "@material-ui/core";
 import FileBase64 from "react-file-base64";
 import { useSelector, useDispatch } from "react-redux";
-import { modalState$ } from "../../redux/selectors/index.selectors";
+import { modalState$ } from "../../redux/selectors";
 import useStyles from "./styles.PostModal";
-import { createPost, hideModal } from "../../redux/action/index.action";
+import { createPost, hideModal } from "../../redux/action";
 
 export default function PostModel() {
   const [data, setData] = React.useState({
@@ -27,9 +27,9 @@ export default function PostModel() {
   }, [dispatch]);
 
   const onSubmit = React.useCallback(() => {
-    console.log({ data });
     dispatch(createPost.createPostRequest(data));
-  }, [data, dispatch]);
+    onClose();
+  }, [data, dispatch, onClose]);
 
   const body = (
     <div className={classes.paper} id="simple-modal-title">
@@ -48,6 +48,7 @@ export default function PostModel() {
           maxRows={15}
           placeholder="Content..."
           value={data.content}
+          onChange={(e) => setData({ ...data, content: e.target.value })}
         />
         <FileBase64
           accept="image/*"
@@ -73,7 +74,7 @@ export default function PostModel() {
 
   return (
     <div>
-      <Modal open={isShow} onClick={{}}>
+      <Modal open={isShow} onClick={onClose}>
         {body}
       </Modal>
     </div>

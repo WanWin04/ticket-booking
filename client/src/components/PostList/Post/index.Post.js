@@ -14,7 +14,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import moment from "moment";
 import useStyles from "./styles.Post";
 import { useDispatch } from "react-redux";
-import { updatePost } from "../../../redux/action/index.action";
+import { updatePost } from "../../../redux/action";
 
 export default function Post({ post }) {
   const classes = useStyles();
@@ -39,7 +39,7 @@ export default function Post({ post }) {
         }
       />
       <CardMedia
-        image={post.attachment}
+        image={post.attachment || ""}
         title="Title"
         className={classes.media}
       />

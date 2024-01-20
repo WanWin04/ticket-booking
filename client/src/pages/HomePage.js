@@ -3,11 +3,11 @@ import { Container, Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import { useDispatch } from "react-redux";
 
-import Header from "../components/Header/index.Header.js";
-import PostList from "../components/PostList/index.PostList.js";
-import useStyles from "./styles.pages.js";
-import { showModal } from "../redux/action/index.action.js";
-import PostModel from "../components/PostModal/index.PostModal.js";
+import Header from "../components/Header/index.Header";
+import PostList from "../components/PostList";
+import useStyles from "./styles.Pages";
+import { showModal } from "../redux/action/index.action";
+import PostModel from "../components/PostModal/index.PostModal";
 
 export default function HomePage() {
   const classes = useStyles();

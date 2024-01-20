@@ -29,3 +29,6 @@ mongoose
   .catch((err) => {
     console.log("err", err);
   });
+
+  // WKS0ARfO5KcvrmG8
+  // mongodb+srv://quangthangduongt:WKS0ARfO5KcvrmG8@cluster0.02dczil.mongodb.net/
