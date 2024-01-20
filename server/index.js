@@ -3,11 +3,14 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import posts from "./routes/posts.routes.js";
 import mongoose from "mongoose";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
-const PORT = process.env.port || 5000;
+const PORT = process.env.PORT || 5000;
 
-const URI = "";
+const URI = process.env.DATABASE_URL;
 
 app.use(bodyParser.json({ limit: "30mb" }));
 app.use(bodyParser.urlencoded({ extended: true, limit: "30mb" }));
